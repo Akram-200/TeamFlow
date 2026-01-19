@@ -1,8 +1,7 @@
-# Nom du projet
+# TeamFlow
 
 ## Présentation générale
-Ce projet consiste à développer **[description très courte du produit]**. 
-Garder la présentation courte et concise.
+Ce projet consiste à développer une application qui aide l'employeur ou chef d'équipe a faire la gestion d'une equipe. 
 
 L’objectif principal est de **[objectif du produit / problème résolu]**.
 
