@@ -1,25 +1,28 @@
-# Cahier des charges (SRS léger) — <Nom du projet>
-**Équipe :** <Noms>  
-**Date :** <YYYY-MM-DD>  
+# Cahier des charges (SRS léger) — TeamFlow
+**Équipe :** Akram Naamane, Alaa Moumen
+**Date :** 2026-01-19 
 **Version :** <v0.1 / v1.0>
 
 ---
 
 ## 1. Contexte & objectif
-- **Contexte :** <Pourquoi ce projet existe?>
-- **Objectif principal :** <Valeur attendue / problème résolu>
-- **Parties prenantes :** <utilisateurs, client, admin, etc.>
+- **Contexte :** Ce projet existe pour régler tout les obstacles qu’une équipe peut avoir
+- **Objectif principal :** Faciliter et centrer tout ce qu’une équipe a besoin pour fonctionner efficacement
+- **Parties prenantes :** Chef d’équipe, Emploiyer
 
 ---
 
 ## 2. Portée (Scope)
 ### 2.1 Inclus (IN)
-- IN-1 : <fonction / cas d’usage inclus>
-- IN-2 : <...>
+- IN-1 : Authentification + rôle
+- IN-2 : Dashboard de présence
+- IN-3 : Creation et affichage des Shifts aux employeurs
+- IN-4 : Permettre le Pointage
 
 ### 2.2 Exclu (OUT)
-- OUT-1 : <fonction explicitement hors scope>
-- OUT-2 : <...>
+- OUT-1 : Gestion d’appel
+- OUT-2 : Messagerie avancé
+- OUT-3 : Sécurité
 
 ---
 
