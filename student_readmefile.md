@@ -1,23 +1,22 @@
 # TeamFlow
 
 ## Présentation générale
-Ce projet consiste à développer une application qui aide l'employeur ou chef d'équipe a faire la gestion d'une equipe. 
+Ce projet consiste à développer une application web permettant à un employeur ou chef d’équipe de gérer efficacement son équipe, notamment en centralisant la gestion des horaires, la présence et les communications internes.
 
-L’objectif principal est de **[objectif du produit / problème résolu]**.
+L’objectif principal est de faciliter la coordination et la communication au sein d’une équipe à travers un espace centralisé regroupant les horaires, le pointage et un chat interne.
 
 ---
 
 ## Équipe
-- Prénom Nom - Num Étudiant
-- Prénom Nom - Num Étudiant
+- Akram Naamane — Num Étudiant: 2410768
 - Prénom Nom - Num Étudiant
 
 ---
 
 ## Produit cible
 Le produit final est destiné à :
-* Type d’utilisateur : [ex. joueur, client, entreprise]
-* Plateforme cible : [PC, Web, Mobile, VR, etc.]
+* Type d’utilisateur : Employeur / Chef d’équipe, Employé
+* Plateforme cible : Application Web (navigateur), Compatible Desktop et Mobile
 ---
 
 ## Structure du dépôt
