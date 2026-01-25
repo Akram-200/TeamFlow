@@ -27,15 +27,59 @@
 ---
 
 ## 3. Acteurs / profils utilisateurs
-- **Acteur A :** <rôle, besoins, contraintes>
-- **Acteur B :** <...>
+- **Acteur A : Chef d’équipe
+  Rôle :
+    Configure l’application (création d’équipe, ajout des employés, définition des rôles).
+    Planifie et publie les shifts / horaires.
+    Consulte et valide les pointages (présence, retard, absence).
+    
+  Besoins :
+    Voir rapidement qui est présent / absent en temps réel.
+    Créer, modifier et supprimer des shifts.
+    Attribuer des shifts aux employés.
+    Peut envoyer des messages privés aux employés.
+    Peut envoyer des messages dans le canal de discussion d’équipe (chat de groupe)
+    
+  Contraintes :
+    Peu de temps pour gérer l’outil, donc interface simple et rapide.
+    Doit pouvoir utiliser le système depuis un navigateur web (desktop ou mobile).
+  
+- **Acteur B : Employé
+  Rôle :
+    Consulte ses horaires.
+    Se pointe à l’arrivée et au départ.
+  
+  Besoins :
+    Accéder facilement à son compte (login simple).
+    Voir ses shifts à venir (jour / semaine).
+    Se pointer en quelques clics au début et à la fin du shift.
+    Peut envoyer des messages privés au chef d’équipe ou à un autre membre.
+    Peut envoyer des messages dans le groupe.
+    Peut consulter et participer au chat de groupe de l’équipe.
+  
+  Contraintes :
+    Peut utiliser un téléphone ou un poste partagé au travail.
+    Ne doit pas avoir accès aux données des autres employés.
 
 ---
 
 ## 4. Exigences fonctionnelles (FR)
-> Forme recommandée : “Le système doit…”
-- **FR-1 :** Le système doit <...>
-- **FR-2 :** Le système doit <...>
+- FR-1 : Le système doit permettre l’authentification des utilisateurs et l’attribution d’un rôle (chef d’équipe ou employé).
+- FR-2 : Le système doit permettre au chef d’équipe de créer, modifier et supprimer des comptes employés.
+- FR-3 : Le système doit afficher un tableau de bord permettant au chef d’équipe de consulter la présence des employés en temps réel.
+- FR-4 : Le système doit permettre au chef d’équipe de créer, modifier et supprimer des shifts (date, heure, employé assigné).
+- FR-5 : Le système doit permettre à chaque employé de consulter ses shifts.
+- FR-6 : Le système doit permettre à l’utilisateur de se pointer (check-in) au début du shift et de se dépointer (check-out) à la fin du shift.
+- FR-7 : Le système doit enregistrer l’heure réelle de pointage afin d’identifier retards, absences ou écarts.
+- FR-8 : Le système doit permettre au chef d’équipe de consulter l’historique des pointages.
+- FR-9 : Le système doit fournir un chat de groupe accessible à tous les membres de l’équipe.
+- FR-10 : Le système doit permettre à un utilisateur de sélectionner un autre membre et d’envoyer un message privé.
+- FR-11 : Le système doit afficher l’historique du chat de groupe.
+- FR-12 : Le système doit afficher l’historique des conversations privées (uniquement pour les deux participants).
+- FR-13 : Le système doit gérer les permissions de visibilité :
+  • le chat de groupe est visible par tous les membres
+  • une conversation privée est visible uniquement par ses deux participants
+- FR-14 : Le système doit notifier l’utilisateur lorsqu’il reçoit un nouveau message (groupe ou privé).
 
 ---
 
