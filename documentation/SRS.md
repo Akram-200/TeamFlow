@@ -87,33 +87,44 @@
 > Performance / sécurité / disponibilité / UX / maintenabilité…
 - **NFR-1 (Performance) :Le système doit afficher les données principales (dashboard, shifts, chat) avec un temps de réponse inférieur à 2 secondes dans des conditions normales.
 - **NFR-2 (Sécurité) : Le système doit exiger une authentification avant d’accéder aux fonctionnalités internes.
-- **NFR-3 (UX) :** <ex. parcours en ≤ 3 clics>
-- **NFR-4 (Qualité) :** <ex. couverture minimale de tests>
+- **NFR-3 (Disponibilité) : Le système doit être utilisable 7 jours sur 7.
+- **NFR-4 (UX) : Les actions principales (consulter ses shifts, pointer, envoyer un message) doivent être réalisables en ≤ 3 clics.
+- **NFR-5 (Qualité) : Le système doit inclure des tests unitaires minimaux sur les fonctions critiques (authentification, pointage).
+- NFR-6 (Compatibilité) : Le système doit fonctionner sur les navigateurs modernes (Chrome, Firefox, Edge) en mode desktop et mobile.
+- NFR-7 (Maintenabilité) : Le code doit être structuré pour séparer frontend (Vue.js) et backend (Node.js / API).
 
 ---
 
 ## 6. Contraintes
-- **C-1 (Technologie) :** <langage / framework imposé>
-- **C-2 (Plateforme) :** <web / mobile / desktop>
-- **C-3 (Délai) :** <dates de phases>
-- **C-4 (Outils) :** <Git, CI, etc.>
+- **C-1 (Technologie) : JavaScript, Node.js, Vue.js
+- **C-2 (Plateforme) : Web
+- **C-3 (Délai) : Fin de la session d’hiver 2026
+- **C-4 (Outils) : Git
 
 ---
 
 ## 7. Données & règles métier (si applicable)
-- **Entités principales :** <User, Order, ...>
-- **Règles métier :** <validation, calculs, permissions, etc.>
+- **Entités principales : User (chef d’équipe / employé), Shift, Pointage, Message (groupe + privé), Équipe
+- **Règles métier :
+  * Un utilisateur doit appartenir à une équipe pour voir le chat et les shifts.
+  * Seul le chef d’équipe peut créer/modifier/supprimer les shifts.
+  * Un employé peut se pointer uniquement sur un shift planifié.
+  * Les messages privés ne sont visibles que par les deux participants.
+  * Le chat de groupe est visible par tous les membres de l’équipe.
+  * Le pointage enregistre l’heure réelle pas l'heure planifiée.
 
 ---
 
 ## 8. Hypothèses & dépendances
 ### 8.1 Hypothèses
-- H-1 : <ex. utilisateurs ont un compte>
-- H-2 : <...>
+ - H-1 : Les utilisateurs disposent d’un compte.
+ - H-2 : es utilisateurs savent utiliser une application web simple
+ - H-3 : Les utilisateurs font partie de la même équipe (chef + employés).
 
 ### 8.2 Dépendances
-- D-1 : <API externe / BD / service>
-- D-2 : <...>
+- D-1 : Le système dépend d’une base de données pour stocker les informations.
+- D-2 : Le frontend dépend du backend pour accéder aux données.
+- D-3 : Le chat dépend d’un mécanisme de communication en temps réel.
 
 ---
 
