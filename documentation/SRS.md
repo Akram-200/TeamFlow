@@ -1,5 +1,5 @@
 # Cahier des charges (SRS léger) — TeamFlow
-**Équipe :** Akram Naamane, Alaa Moumen
+**Équipe :** Akram Naamane, Alaeeddine Moumene
 **Date :** 2026-01-19 
 **Version :** <v0.1 / v1.0>
 
