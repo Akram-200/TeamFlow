@@ -83,6 +83,11 @@ Nous choisissons une architecture web app client serveur REST avec une interface
 
 
 
+
 -UML: Use Case Chef d'equipe
 <img width="903" height="946" alt="useCase Chef dequipe drawio" src="https://github.com/user-attachments/assets/964cc050-35f2-42e1-b591-ca2c57e2f99a" />
+
+UML use case employé :
+
+![uml](https://github.com/user-attachments/assets/eb3401e0-5959-4273-b7a1-7f8b06d73c0c)
 
