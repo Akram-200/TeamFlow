@@ -76,6 +76,8 @@ Nous choisissons une architecture web app client serveur REST avec une interface
 ---
 
 ## 8. Liens
-- UML : <lien/nom de fichier>
-- Issue/Tâche : <lien>
-- Référence : <doc officiel / cours>
+- UML : diagramme de classe
+<img width="731" height="594" alt="Diagramme de classes drawio" src="https://github.com/user-attachments/assets/6e8989f2-41a0-4c6a-bd91-be46f4f7f8b4" />
+-UML: Use Case Chef d'equipe
+<img width="903" height="946" alt="useCase Chef dequipe drawio" src="https://github.com/user-attachments/assets/964cc050-35f2-42e1-b591-ca2c57e2f99a" />
+
