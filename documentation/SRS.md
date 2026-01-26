@@ -85,8 +85,8 @@
 
 ## 5. Exigences non fonctionnelles (NFR)
 > Performance / sécurité / disponibilité / UX / maintenabilité…
-- **NFR-1 (Performance) :** <ex. temps de réponse < 2s>
-- **NFR-2 (Sécurité) :** <ex. authentification requise>
+- **NFR-1 (Performance) :Le système doit afficher les données principales (dashboard, shifts, chat) avec un temps de réponse inférieur à 2 secondes dans des conditions normales.
+- **NFR-2 (Sécurité) : Le système doit exiger une authentification avant d’accéder aux fonctionnalités internes.
 - **NFR-3 (UX) :** <ex. parcours en ≤ 3 clics>
 - **NFR-4 (Qualité) :** <ex. couverture minimale de tests>
 
