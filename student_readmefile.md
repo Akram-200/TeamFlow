@@ -9,7 +9,7 @@ L’objectif principal est de faciliter la coordination et la communication au s
 
 ## Équipe
 - Akram Naamane — Num Étudiant: 2410768
-- Prénom Nom - Num Étudiant
+- Alaeeddine Moumene - Num Étudiant 2410810
 
 ---
 
