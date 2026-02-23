@@ -161,7 +161,12 @@ Les Users peuvent également envoyer plusieurs Messages, qui peuvent être de ty
 -UML: Use Case Chef d'equipe
 <img width="903" height="946" alt="useCase Chef dequipe drawio" src="https://github.com/user-attachments/assets/964cc050-35f2-42e1-b591-ca2c57e2f99a" />
 
+
+Ce diagramme de cas d’utilisation illustre les principales fonctionnalités accessibles au chef d’équipe dans le système TeamFlow.
+Après authentification, le chef d’équipe peut gérer les comptes employés, organiser les shifts, consulter le tableau de bord de présence ainsi que l’historique des pointages. Il peut également communiquer via le chat de groupe ou privé et recevoir des notifications lors de nouveaux messages.
 UML use case employé :
 
 ![uml](https://github.com/user-attachments/assets/eb3401e0-5959-4273-b7a1-7f8b06d73c0c)
+
+
 
