@@ -1,77 +1,147 @@
-# Architecture Decision Records ADR-<NN> — <Titre de la décision>
-**Statut :** Proposed | Accepted | Rejected | Superseded  
-**Date :** <2026-01-25>  
-**Décideurs :** <Alaeeddine Moumene , Akram Naamane>  
-**Contexte projet :** <TeamFlow / module>
+# ADR-01 — Choix d’une architecture Web App Client–Serveur REST
+
+**Statut :** Accepted  
+**Date :** 2026-01-25  
+**Décideurs :** Alaeeddine Moumene, Akram Naamane  
+**Contexte projet :** TeamFlow — Application de gestion d’équipe et de shifts  
 
 ---
 
 ## 1. Contexte
-- **Problème / besoin :** le systeme doit etre accessible a des employes et chefs d'équipe sur mobile et desktop , avec gestion des utilisateurs, chats prive ou publique, présence et shifts.
-- **Contraintes :** Accessibilité web requise , maintenabilité et simplicité , cout et temps limités , outils imposés: SDLC + documentation + UML
-- **Forces en présence :** simplicite de deploiement, performance suffisante, séparation du frontend et backend, risque réseau
+
+### Problème / besoin
+
+Le système TeamFlow doit être accessible aux employés et aux chefs d’équipe :
+
+- Sur mobile et desktop
+- Sans installation obligatoire
+- Avec gestion :
+  - des utilisateurs
+  - des rôles
+  - des shifts
+  - de la présence
+  - des chats privés et publics
+
+### Contraintes
+
+- Accessibilité web requise
+- Maintenabilité et simplicité
+- Budget et temps limités (MVP)
+- Méthodologie imposée : SDLC + documentation + UML
+
+### Forces en présence
+
+- Simplicité de déploiement
+- Performance suffisante
+- Séparation frontend / backend
+- Risque lié à la dépendance réseau
 
 ---
 
 ## 2. Décision
-> Décrire la décision en 1–3 phrases.
-Nous choisissons une architecture web app client serveur REST avec une interface web front end consommant API backend .
-> pour séparer l’interface utilisateur de la logique métier, améliorer la maintenabilité et permettre un accès depuis n’importe quel navigateur. 
+
+Nous choisissons une architecture **Web Application Client–Serveur basée sur une API REST**.
+
+Le frontend (interface web) consommera une API backend via HTTP.  
+La logique métier sera isolée côté serveur.
+
+Cette architecture permet :
+
+- Une séparation claire entre interface utilisateur et logique métier
+- Une meilleure maintenabilité
+- Un accès depuis n’importe quel navigateur moderne
 
 ---
 
 ## 3. Alternatives considérées
-### Option A — <Applications Mobile Native>
-- **Avantages :** <expérience utilisateur optimisée, notifications push native>
-- **Inconvénients :** <développemnt et maintenance plus cher, complexité multiplateforme, non necéssaire pour un MVP>
 
-### Option B — <Applications Destkop>
-- **Avantages :** performances locales et gestion des fichiers simplifiée
-- **Inconvénients :** installation obligatoire , pas adaptées a l'usage mobile, friction côté utilisateurs 
+### Option A — Application Mobile Native
+
+**Avantages :**
+- Expérience utilisateur optimisée
+- Notifications push natives
+- Meilleure intégration système
+
+**Inconvénients :**
+- Développement et maintenance plus coûteux
+- Complexité multiplateforme (iOS / Android)
+- Non nécessaire pour un MVP académique
 
 ---
 
-## 4. Justification (Pourquoi cette décision ?)
-- Compatible avec le besoin des employés (utilisation sur poste partagé).
-- Déploiement centralisé.
-- Conforme au cours et exigences du SDLC.
-- Réduit la charge de maintenance.
-- Permet une évolution agile.
+### Option B — Application Desktop
+
+**Avantages :**
+- Performances locales élevées
+- Gestion simplifiée des ressources locales
+
+**Inconvénients :**
+- Installation obligatoire
+- Non adaptée à l’usage mobile
+- Complexité de distribution et mise à jour
+
+---
+
+## 4. Justification
+
+Cette décision est retenue car :
+
+- Compatible avec l’usage sur postes partagés
+- Déploiement centralisé
+- Conforme aux exigences du cours (SDLC + UML)
+- Réduit la charge de maintenance
+- Permet une évolution agile du système
+- Assure une séparation claire des responsabilités
 
 ---
 
 ## 5. Conséquences
+
 ### Positives
-- Accessibilité multiplateformeé
-- Mise à jour instantanée (serveur)
-- Séparation claire des responsabilités.
-- Adoption facile par les utilisateurs finaux
-  
 
-### Négatives / Risques
-- Dépendance à la connexion internet
-- Sécurisation réseau nécessaire.
-- Gestion du temps réel à prévoir. 
-
-### Impact sur l’architecture / le code
-- Backend exposera des endpoints REST.
-- Frontend récupérera les données via fetch et axios.
-- Module chat nécessitera un canal temps réel.
+- Accessibilité multiplateforme (desktop + mobile navigateur)
+- Mise à jour instantanée côté serveur
+- Architecture modulaire et évolutive
+- Adoption facilitée par les utilisateurs
 
 ---
 
-## 6. Plan d’implémentation (court)
-- [ ] Étape 1 : Définir la structure frontend.
-- [ ] Étape 2 : Définir l’API REST backend.
-- [ ] Étape 3 : Intégrer et tester les communications client-serveur.
+### Négatives / Risques
+
+- Dépendance à la connexion internet
+- Sécurisation réseau nécessaire
+- Gestion du temps réel à prévoir pour le chat
+
+---
+
+### Impact sur l’architecture
+
+- Le backend exposera des endpoints REST (authentification, shifts, utilisateurs, chat).
+- Le frontend récupérera les données via fetch ou axios.
+- Le module chat nécessitera un mécanisme temps réel (WebSocket ou polling optimisé).
+- Authentification via token (JWT) ou sessions sécurisées.
+
+---
+
+## 6. Plan d’implémentation
+
+- [ ] Définir la structure frontend.
+- [ ] Définir les endpoints REST backend.
+- [ ] Implémenter l’authentification.
+- [ ] Implémenter la gestion des shifts.
+- [ ] Intégrer le module chat.
+- [ ] Tester les communications client–serveur.
 
 ---
 
 ## 7. Validation
-- **Comment vérifier que c’est bon ?**
-  - L’interface web communique correctement avec l’API.
-  - L’application fonctionne depuis un navigateur sans installation.
-  - Les fonctionnalités (auth, shifts, pointage) sont indépendantes du device.
+
+La décision sera validée si :
+
+- L’application fonctionne entièrement depuis un navigateur sans installation.
+- L’interface web communique correctement avec l’API.
+- Les fonctionnalités principales (authentification, shifts, présence) fonctionnent indépendamment du device.
+- Les modules frontend et backend sont clairement séparés.
 
 ---
 
