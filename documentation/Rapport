@@ -1,0 +1,24 @@
+Projet : TeamFlow
+Équipe : Akram Naamane, Alaeeddine Moumene
+
+Ce que nous avons corrigé
+
+Correction du lien du SRS.md dans le README.md (il pointe maintenant vers documentation/SRS.md).
+
+Vérification que tous les fichiers Markdown sont bien lisibles sur GitHub.
+
+Organisation propre des dossiers /documentation et /code.
+
+Ce que nous avons amélioré
+
+Ajout d’identifiants aux exigences fonctionnelles (FR-01, FR-02, etc.).
+
+Reformulation des exigences avec “Le système doit…”.
+
+Ajout de critères de validation simples pour rendre les FR plus claires.
+
+Amélioration des exigences non fonctionnelles (performance, sécurité, disponibilité).
+
+Clarification du scope (ce qui est inclus et exclu dans la V1).
+
+Ajout des diagrammes UML (diagramme de classes + use cases).
