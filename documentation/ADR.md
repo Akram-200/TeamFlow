@@ -164,10 +164,15 @@ Les Users peuvent également envoyer plusieurs Messages, qui peuvent être de ty
 
 Ce diagramme de cas d’utilisation illustre les principales fonctionnalités accessibles au chef d’équipe dans le système TeamFlow.
 Après authentification, le chef d’équipe peut gérer les comptes employés, organiser les shifts, consulter le tableau de bord de présence ainsi que l’historique des pointages. Il peut également communiquer via le chat de groupe ou privé et recevoir des notifications lors de nouveaux messages.
-UML use case employé :
+UML use case employé 
 
 ![uml](https://github.com/user-attachments/assets/eb3401e0-5959-4273-b7a1-7f8b06d73c0c)
 
 Ce diagramme de cas d’utilisation présente les fonctionnalités accessibles à l’employé dans le système TeamFlow.
 Après authentification, l’employé peut consulter ses shifts, effectuer son pointage (check-in / check-out), participer au chat de groupe ou au chat privé, consulter l’historique des messages et recevoir des notifications en cas de nouveau message.
+
+![sprintdiagramme](https://github.com/user-attachments/assets/cbf4a1f3-9f6f-4de9-ad93-c0889c3ee990)
+
+Ce sprint couvre la mise en place des fonctionnalités principales de TeamFlow. Il commence par le développement du Frontend, suivi de l’Authentification & Rôles, qui permet de sécuriser l’accès au système. Une fois l’accès validé, les modules Gestion des Shifts et Gestion des Employés sont développés pour permettre l’organisation de l’équipe. Ensuite, le module Pointage & Présence est implémenté pour gérer les check-in et check-out. Enfin, le sprint se termine par le module Communication (Chat) afin de permettre les échanges entre les membres.
+
 
