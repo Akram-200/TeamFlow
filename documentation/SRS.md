@@ -1,135 +1,302 @@
-# Cahier des charges (SRS léger) — TeamFlow
-**Équipe :** Akram Naamane, Alaeeddine Moumene
-**Date :** 2026-01-19 
-**Version :** <v0.1 / v1.0>
+# Cahier des charges (SRS) — TeamFlow
+
+**Équipe :** Akram Naamane, Alaeeddine Moumene  
+**Date :** 2026-01-19  
+**Version :** v1.0  
 
 ---
 
-## 1. Contexte & objectif
-- **Contexte :** Ce projet existe pour régler tout les obstacles qu’une équipe peut avoir
-- **Objectif principal :** Faciliter et centrer tout ce qu’une équipe a besoin pour fonctionner efficacement
-- **Parties prenantes :** Chef d’équipe, Emploiyer
+# 1. Contexte & Objectif
+
+## 1.1 Contexte
+
+Les équipes de travail rencontrent souvent des difficultés dans la gestion des horaires, de la présence et des communications internes.
+
+TeamFlow est une application web destinée à centraliser ces fonctionnalités dans un seul outil simple et accessible depuis un navigateur.
+
+## 1.2 Objectif principal
+
+Faciliter la gestion opérationnelle d’une équipe en permettant :
+
+- La planification des shifts
+- Le pointage (check-in / check-out)
+- La consultation de la présence en temps réel
+- La communication via chat (groupe et privé)
+
+## 1.3 Parties prenantes
+
+- Chef d’équipe
+- Employé
 
 ---
 
-## 2. Portée (Scope)
-### 2.1 Inclus (IN)
-- IN-1 : Authentification + rôle
-- IN-2 : Dashboard de présence
-- IN-3 : Creation et affichage des Shifts aux employeurs
-- IN-4 : Permettre le Pointage
+# 2. Portée (Scope)
 
-### 2.2 Exclu (OUT)
-- OUT-1 : Gestion d’appel
-- OUT-2 : Messagerie avancé
-- OUT-3 : Sécurité
+## 2.1 Inclus (Scope IN – V1)
 
----
+- IN-1 : Authentification et gestion des rôles
+- IN-2 : Tableau de bord de présence
+- IN-3 : Création, modification et suppression des shifts
+- IN-4 : Système de pointage (check-in / check-out)
+- IN-5 : Chat de groupe
+- IN-6 : Messagerie privée
 
-## 3. Acteurs / profils utilisateurs
-- **Acteur A : Chef d’équipe
-  Rôle :
-    Configure l’application (création d’équipe, ajout des employés, définition des rôles).
-    Planifie et publie les shifts / horaires.
-    Consulte et valide les pointages (présence, retard, absence).
-    
-  Besoins :
-    Voir rapidement qui est présent / absent en temps réel.
-    Créer, modifier et supprimer des shifts.
-    Attribuer des shifts aux employés.
-    Peut envoyer des messages privés aux employés.
-    Peut envoyer des messages dans le canal de discussion d’équipe (chat de groupe)
-    
-  Contraintes :
-    Peu de temps pour gérer l’outil, donc interface simple et rapide.
-    Doit pouvoir utiliser le système depuis un navigateur web (desktop ou mobile).
-  
-- **Acteur B : Employé
-  Rôle :
-    Consulte ses horaires.
-    Se pointe à l’arrivée et au départ.
-  
-  Besoins :
-    Accéder facilement à son compte (login simple).
-    Voir ses shifts à venir (jour / semaine).
-    Se pointer en quelques clics au début et à la fin du shift.
-    Peut envoyer des messages privés au chef d’équipe ou à un autre membre.
-    Peut envoyer des messages dans le groupe.
-    Peut consulter et participer au chat de groupe de l’équipe.
-  
-  Contraintes :
-    Peut utiliser un téléphone ou un poste partagé au travail.
-    Ne doit pas avoir accès aux données des autres employés.
+## 2.2 Exclu (Scope OUT – V1)
+
+- OUT-1 : Gestion d’appels vocaux ou vidéo
+- OUT-2 : Messagerie avancée (fichiers, réactions, etc.)
+- OUT-3 : Application mobile native
+- OUT-4 : Intégrations externes (Slack, Google, etc.)
+- OUT-5 : Gestion RH avancée ou paie
 
 ---
 
-## 4. Exigences fonctionnelles (FR)
-- FR-1 : Le système doit permettre l’authentification des utilisateurs et l’attribution d’un rôle (chef d’équipe ou employé).
-- FR-2 : Le système doit permettre au chef d’équipe de créer, modifier et supprimer des comptes employés.
-- FR-3 : Le système doit afficher un tableau de bord permettant au chef d’équipe de consulter la présence des employés en temps réel.
-- FR-4 : Le système doit permettre au chef d’équipe de créer, modifier et supprimer des shifts (date, heure, employé assigné).
-- FR-5 : Le système doit permettre à chaque employé de consulter ses shifts.
-- FR-6 : Le système doit permettre à l’utilisateur de se pointer (check-in) au début du shift et de se dépointer (check-out) à la fin du shift.
-- FR-7 : Le système doit enregistrer l’heure réelle de pointage afin d’identifier retards, absences ou écarts.
-- FR-8 : Le système doit permettre au chef d’équipe de consulter l’historique des pointages.
-- FR-9 : Le système doit fournir un chat de groupe accessible à tous les membres de l’équipe.
-- FR-10 : Le système doit permettre à un utilisateur de sélectionner un autre membre et d’envoyer un message privé.
-- FR-11 : Le système doit afficher l’historique du chat de groupe.
-- FR-12 : Le système doit afficher l’historique des conversations privées (uniquement pour les deux participants).
-- FR-13 : Le système doit gérer les permissions de visibilité :
-  • le chat de groupe est visible par tous les membres
-  • une conversation privée est visible uniquement par ses deux participants
-- FR-14 : Le système doit notifier l’utilisateur lorsqu’il reçoit un nouveau message (groupe ou privé).
+# 3. Acteurs
+
+## 3.1 Chef d’équipe
+
+### Rôle
+- Configure l’équipe
+- Gère les employés
+- Planifie les shifts
+- Consulte les présences
+- Accède à l’historique des pointages
+
+### Contraintes
+- Interface simple et rapide
+- Accessible via navigateur (desktop ou mobile)
 
 ---
 
-## 5. Exigences non fonctionnelles (NFR)
-> Performance / sécurité / disponibilité / UX / maintenabilité…
-- **NFR-1 (Performance) :Le système doit afficher les données principales (dashboard, shifts, chat) avec un temps de réponse inférieur à 2 secondes dans des conditions normales.
-- **NFR-2 (Sécurité) : Le système doit exiger une authentification avant d’accéder aux fonctionnalités internes.
-- **NFR-3 (Disponibilité) : Le système doit être utilisable 7 jours sur 7.
-- **NFR-4 (UX) : Les actions principales (consulter ses shifts, pointer, envoyer un message) doivent être réalisables en ≤ 3 clics.
-- **NFR-5 (Qualité) : Le système doit inclure des tests unitaires minimaux sur les fonctions critiques (authentification, pointage).
-- NFR-6 (Compatibilité) : Le système doit fonctionner sur les navigateurs modernes (Chrome, Firefox, Edge) en mode desktop et mobile.
-- NFR-7 (Maintenabilité) : Le code doit être structuré pour séparer frontend (Vue.js) et backend (Node.js / API).
+## 3.2 Employé
+
+### Rôle
+- Consulte ses horaires
+- Se pointe au début et à la fin du shift
+- Utilise le chat
+
+### Contraintes
+- Peut utiliser un téléphone ou un poste partagé
+- N’a pas accès aux données des autres employés
 
 ---
 
-## 6. Contraintes
-- **C-1 (Technologie) : JavaScript, Node.js, Vue.js
-- **C-2 (Plateforme) : Web
-- **C-3 (Délai) : Fin de la session d’hiver 2026
-- **C-4 (Outils) : Git
+# 4. Exigences Fonctionnelles (FR)
 
 ---
 
-## 7. Données & règles métier (si applicable)
-- **Entités principales : User (chef d’équipe / employé), Shift, Pointage, Message (groupe + privé), Équipe
-- **Règles métier :
-  * Un utilisateur doit appartenir à une équipe pour voir le chat et les shifts.
-  * Seul le chef d’équipe peut créer/modifier/supprimer les shifts.
-  * Un employé peut se pointer uniquement sur un shift planifié.
-  * Les messages privés ne sont visibles que par les deux participants.
-  * Le chat de groupe est visible par tous les membres de l’équipe.
-  * Le pointage enregistre l’heure réelle pas l'heure planifiée.
+## FR-01 : Authentification
+
+Le système doit permettre à un utilisateur de se connecter avec un rôle (chef d’équipe ou employé).  
+**Priorité : Must**
+
+**Critères de validation :**
+1. Identifiants valides → accès accordé.
+2. Identifiants invalides → message d’erreur.
+3. Accès interdit si non authentifié.
 
 ---
 
-## 8. Hypothèses & dépendances
-### 8.1 Hypothèses
- - H-1 : Les utilisateurs disposent d’un compte.
- - H-2 : es utilisateurs savent utiliser une application web simple
- - H-3 : Les utilisateurs font partie de la même équipe (chef + employés).
+## FR-02 : Gestion des comptes employés
 
-### 8.2 Dépendances
-- D-1 : Le système dépend d’une base de données pour stocker les informations.
-- D-2 : Le frontend dépend du backend pour accéder aux données.
-- D-3 : Le chat dépend d’un mécanisme de communication en temps réel.
+Le système doit permettre au chef d’équipe de créer, modifier et supprimer des comptes employés.  
+**Priorité : Must**
+
+**Critères :**
+1. Seul le chef peut gérer les comptes.
+2. Email unique obligatoire.
+3. Suppression interdite si l’employé possède des shifts actifs.
 
 ---
 
-## 9. Critères d’acceptation globaux (Definition of Done – mini)
-- [ ] Fonctionnalités livrées et testées
-- [ ] Tests unitaires présents
-- [ ] Gestion d’erreurs minimale
-- [ ] Documentation à jour (UML + ADR si requis)
+## FR-03 : Tableau de bord de présence
+
+Le système doit afficher au chef d’équipe la liste des employés avec leur statut (présent, absent, en retard).  
+**Priorité : Must**
+
+**Critères :**
+1. Mise à jour après pointage.
+2. Affichage clair du statut.
+3. Accès interdit aux employés.
+
+---
+
+## FR-04 : Gestion des shifts
+
+Le système doit permettre au chef d’équipe de créer, modifier et supprimer des shifts.  
+**Priorité : Must**
+
+**Critères :**
+1. Date et heure obligatoires.
+2. Un shift doit être assigné à un employé.
+3. Seul le chef peut modifier ou supprimer un shift.
+
+---
+
+## FR-05 : Consultation des shifts
+
+Le système doit permettre à un employé de consulter ses shifts (jour / semaine).  
+**Priorité : Must**
+
+**Critères :**
+1. Affichage limité aux shifts personnels.
+2. Mise à jour automatique après modification.
+3. Accès refusé aux shifts d’autres employés.
+
+---
+
+## FR-06 : Pointage (Check-in / Check-out)
+
+Le système doit permettre à un employé de se pointer au début et à la fin d’un shift.  
+**Priorité : Must**
+
+**Critères :**
+1. Pointage autorisé uniquement si un shift est planifié.
+2. Enregistrement de l’heure réelle.
+3. Refus si tentative en dehors du shift planifié.
+
+---
+
+## FR-07 : Historique des pointages
+
+Le système doit permettre au chef d’équipe de consulter l’historique des pointages.  
+**Priorité : Should**
+
+**Critères :**
+1. Filtrage par employé.
+2. Affichage date + heure réelle.
+3. Consultation en lecture seule.
+
+---
+
+## FR-08 : Chat de groupe
+
+Le système doit permettre aux membres d’une équipe d’échanger via un chat commun.  
+**Priorité : Should**
+
+**Critères :**
+1. Visible par tous les membres de l’équipe.
+2. Historique conservé.
+3. Message affiché immédiatement.
+
+---
+
+## FR-09 : Messagerie privée
+
+Le système doit permettre à un utilisateur d’envoyer un message privé à un autre membre.  
+**Priorité : Should**
+
+**Critères :**
+1. Visible uniquement par les deux participants.
+2. Historique conservé.
+3. Notification lors d’un nouveau message.
+
+---
+
+# 5. Exigences Non Fonctionnelles (NFR)
+
+---
+
+## NFR-01 (Performance)
+
+Les pages principales doivent charger en ≤ 2 secondes dans des conditions normales.
+
+---
+
+## NFR-02 (Sécurité)
+
+- Authentification obligatoire.
+- Les mots de passe doivent être hashés.
+- Les permissions doivent être vérifiées côté backend.
+
+---
+
+## NFR-03 (Disponibilité)
+
+Le système doit être accessible 7 jours sur 7 hors maintenance planifiée.
+
+---
+
+## NFR-04 (UX)
+
+Les actions principales (consulter shifts, pointer, envoyer message) doivent être réalisables en ≤ 3 clics.
+
+---
+
+## NFR-05 (Qualité)
+
+Des tests unitaires doivent couvrir :
+- Authentification
+- Pointage
+- Création de shifts
+
+---
+
+## NFR-06 (Compatibilité)
+
+Le système doit fonctionner sur Chrome, Firefox et Edge (versions récentes) en mode desktop et mobile.
+
+---
+
+## NFR-07 (Maintenabilité)
+
+Le code doit respecter une architecture séparant :
+
+- Frontend (Vue.js)
+- Backend (Node.js / API REST)
+
+---
+
+# 6. Contraintes
+
+- C-1 : Technologies — JavaScript, Node.js, Vue.js
+- C-2 : Plateforme — Web
+- C-3 : Délai — Fin de la session hiver 2026
+- C-4 : Outils — Git + documentation UML
+
+---
+
+# 7. Données & Règles Métier
+
+## 7.1 Entités principales
+
+- User
+- Équipe
+- Shift
+- Pointage
+- Message
+
+## 7.2 Règles métier
+
+- Un utilisateur doit appartenir à une équipe.
+- Seul le chef d’équipe peut gérer les shifts.
+- Un employé peut se pointer uniquement sur un shift planifié.
+- Le pointage enregistre l’heure réelle.
+- Les messages privés sont visibles uniquement par les participants.
+- Le chat de groupe est visible par tous les membres.
+
+---
+
+# 8. Hypothèses & Dépendances
+
+## 8.1 Hypothèses
+
+- Les utilisateurs disposent d’un compte.
+- Les utilisateurs savent utiliser une application web simple.
+- Tous les utilisateurs appartiennent à une équipe.
+
+## 8.2 Dépendances
+
+- Base de données pour stockage.
+- Backend API pour traitement.
+- Mécanisme temps réel pour le chat.
+
+---
+
+# 9. Critères d’acceptation globaux (Definition of Done)
+
+- [ ] Toutes les fonctionnalités du Scope IN sont implémentées.
+- [ ] Tests unitaires présents.
+- [ ] Gestion minimale des erreurs.
+- [ ] Documentation (SRS + ADR + UML) complète et cohérente.
+- [ ] Application accessible via navigateur.
