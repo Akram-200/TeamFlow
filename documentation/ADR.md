@@ -149,7 +149,11 @@ La décision sera validée si :
 - UML : diagramme de classe
 <img width="731" height="594" alt="Diagramme de classes drawio" src="https://github.com/user-attachments/assets/6e8989f2-41a0-4c6a-bd91-be46f4f7f8b4" />
 
-
+Ce diagramme de classes représente la structure principale du système TeamFlow.
+Une Équipe contient plusieurs Users (relation 1-N).
+Chaque User peut avoir plusieurs Shifts et effectuer des Pointages.
+Un Shift peut générer un ou plusieurs Pointages (check-in / check-out).
+Les Users peuvent également envoyer plusieurs Messages, qui peuvent être de type groupe ou privé.
 
 
 
