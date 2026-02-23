@@ -169,6 +169,5 @@ UML use case employé :
 ![uml](https://github.com/user-attachments/assets/eb3401e0-5959-4273-b7a1-7f8b06d73c0c)
 
 Ce diagramme de cas d’utilisation présente les fonctionnalités accessibles à l’employé dans le système TeamFlow.
-
 Après authentification, l’employé peut consulter ses shifts, effectuer son pointage (check-in / check-out), participer au chat de groupe ou au chat privé, consulter l’historique des messages et recevoir des notifications en cas de nouveau message.
 
